@@ -16,13 +16,13 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <form name="submit-to-google-sheet">
+        <form name="google-sheet">
             <input name="email" type="text" placeholder="Email" required>
             <input name="extra" type="text" placeholder="Extra">
             <button type="submit">Send</button>
         </form>
         <script>
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbxQxdygDOTj8XB4rupdo4Meiqe9F3_ZpS2vuNBseznMTugcgmmeUtrXMOtsb-2-WdDB/exec'
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbx0SkhL7NC8k65b0NBfcc3giMZoM7VLFB9x78a8ogNMtvjauf4UQgl5wgU3plKV829l/exec'
             const form = document.forms['google-sheet']
 
             form.addEventListener('submit', e => {
