@@ -14,19 +14,20 @@
     </head>
     <body>
         <form name="google-sheet">
+            <input type="hidden" name="func" value="register">
             <input name="email" type="text" placeholder="Email" required>
             <input name="password" type="text" placeholder="password">
             <button type="submit">Send</button>
         </form>
         <script>
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbyUcrBwh-rql7nNEZkKjnahcp-tERDxC1KH39BLrMgU8AfJ9LqYOC2hP9TMTHMA0Z_N/exec'
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbyNqvVNh6UdPaZwguzS9RS6Iowiy2m2enJ9QDGLg27jNsiX1hDentijmX7C_1UpU4pS/exec'
             const form = document.forms['google-sheet']
 
             form.addEventListener('submit', e => {
                 e.preventDefault()
                 fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                    .then(response => alert("Success!"))
-                    .catch(error => alert('Error!'))
+                    .then(response => console.log('Success!', response))
+                    .catch(error => console.error('Error!', error.message))
             })
         </script>
         <br>
